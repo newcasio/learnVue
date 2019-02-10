@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ol>
+        <dooo
+          v-for="item in nameLink"
+          v-bind:whatever="item"
+          v-bind:key="item.id"
+        ></dooo>
+      </ol>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
+
+<!-- v-bind: must link to props in component -->
