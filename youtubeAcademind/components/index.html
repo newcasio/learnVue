@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <title>Vue Learning</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{title}}</p>
+      <hr />
+
+      <h3 class="user">This is using a v-for</h3>
+      <div class="user" v-for="user in users">
+        <p>Username: {{user.username}}</p>
+        <hr />
+      </div>
+
+      <h3 class="user">This is from a component</h3>
+      <app-user></app-user>
+      <app-user></app-user>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

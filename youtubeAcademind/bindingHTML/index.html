@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <title>Vue Learning</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-bind:class="cssClass">Class: {{cssClass}}</p>
+      <!-- <p class="red">Class: {{cssClass}}</p> -->
+      <input type="text" v-on:input="cssClass= $event.target.value" />
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
+
+<!-- v-on:input can use v-model -->
+
+<!--
+  <input type="text" v-on:input="cssClass= $event.target.value" /> will do the
+  same as <input type="text" v-model="cssClass"
+-->
+
+<!--
+  In the <p> element we use binding so we can use a variable as a attribute value.  If text in the html, we just used {{}}.  Here we want to used the cssClass variable.  Because we are assigning it to an attribute, we need to use bind.
+-->

@@ -9,7 +9,14 @@ let a = new Vue({
     }
   },
   computed:{
-
+    name(){
+      return.........
+    }
+  },
+  filters:{
+    something(){
+      return ......
+    }
   }
 })
 

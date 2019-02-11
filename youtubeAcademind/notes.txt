@@ -1,0 +1,73 @@
+v-on:click === @click
+
+v-bind === :, eg v-bind:class === :class
+_______________________________
+
+<input type="text" v-on:input="cssClass= $event.target.value" />
+
+will do the same as
+
+<input type="text" v-model="cssClass"
+
+Use v-model if can
+https://stackoverflow.com/questions/42260233/vue-js-difference-between-v-model-and-v-bind
+
+
+
+_______________________________
+
+computed properties.
+
+one property depends on another property.
+
+
+_______________________________
+if/else
+
+<p v-if=(boolean)> Condition is TRUE </p>
+<p v-else=(boolean)> Condition is FALSE </p>
+
+if boolean in data is true, all v-if statements will render.
+if boolean in data is false, all v-else statements will render.
+
+v-show used to show and hide an element, changes the visibility.
+Whereas, v-if/else attaches and dettaches the element from the DOM.
+
+
+_______________________________
+loops
+
+<li v-for="instance of group" >{{instance.property}}</li>
+Where the instance is any name that indicates the object in the array, eg person.
+The group is the name of the name of the array of objects you want to loop through, eg. people.
+
+In the v-for, add index to get the index of each iteration.  This does not have to be specified in vue instance data object.  eg. <li v-for="(instance, index) of group".  Access this in the html {{index}} (no need for instance.index).
+
+_______________________________
+filters
+
+apply a function to an output.
+
+eg. apply a filter named uppercase to {{title}} --> {{title | uppercase}}
+
+Either define locally or locally within a vue instance.
+Can change multiple {{title | uppercase | filter1 | filter 2}}.
+_______________________________
+Components
+
+Reusable Vue instances with a name.  Then call the component in your html eg. <newComponent></new Component>.  This can be done multiple times.
+
+Contains a data property which returns a function (instead of an object).
+Must contain a template which is a string of html code to render (must be a continuous string of html).  Can also contain computed, watch, methods.  Doesn't require el as you place the component where you want it to render.
+But a new Vue instance with a el is still required.
+
+Vue.component('componentName', {
+  data: function(){
+    return{
+      count:0;
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+
+Can create 'components:' locally in a view instance too.
